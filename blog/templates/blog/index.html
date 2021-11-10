@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+
+{% block title %} My Blog {% endblock %} 
+
+{% block css_files %}<link rel = "stylesheet" href="{% static "blog/index.css"%}">
+{% endblock css_files %}
+
+{% block body %}
+
+
+<section id="welcome">
+  <header>
+    <img src="{%static "blog/images/me.jpg"%}" alt="Neeraj Author" />
+    <h2>NEERAJ'S BLOG</h2>
+  </header>
+  <p>Hi, This is neeraj</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My latest thoughts</h2>
+
+  <ul>
+    <li>
+      <article class="post">
+        <a href="">
+        <img src="{% static "blog/images/mountains.jpg"%}" alt="Mountain Hiking" />
+          <div id="post__content">
+            <h3>Mountain Hiking</h3>
+            <p>
+              There's nothing like the views you get while hiking in the
+              mountains!
+            </p>
+          </div>
+        </a>
+      </article>
+    </li>
+  </ul>
+</section>
+
+<section id="about">
+  <h2>What I do</h2>
+  <p>I love to code and games</p>
+  <p>My goal is to become a great programmer</p>
+</section>
+{% endblock body %}

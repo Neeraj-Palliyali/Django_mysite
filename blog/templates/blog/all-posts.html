@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} My Blog {% endblock %} 
+
+{% block css_files %}<link rel = "stylesheet" href="{% static "blog/index.css"%}">
+{% endblock css_files %}
+
+{% block body %}
+<section id = "all-posts">
+    <h2>
+        <ul>
+            <li>
+                <article>
+                    
+                </article>
+            </li>
+        </ul>
+    </h2>
+</section>
+{% endblock body %}
