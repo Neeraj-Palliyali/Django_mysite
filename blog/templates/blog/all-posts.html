@@ -4,19 +4,19 @@
 
 {% block title %} My Blog {% endblock %} 
 
-{% block css_files %}<link rel = "stylesheet" href="{% static "blog/index.css"%}">
+{% block css_files %}
+    <link rel = "stylesheet" href="{% static "blog/all-posts.css"%}">
+    <link rel = "stylesheet" href="{% static "blog/post.css"%}">
 {% endblock css_files %}
 
 {% block body %}
 <section id = "all-posts">
-    <h2>
+    <h2>My Collected Posts </h2>
         <ul>
-            <li>
-                <article>
-                    
-                </article>
-            </li>
+            {% for post in all_posts %}
+            {% include "blog/includes/post.html" %}
+            {% endfor %}
         </ul>
-    </h2>
+    
 </section>
 {% endblock body %}
