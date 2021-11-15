@@ -5,5 +5,5 @@
         "**/requirements{/**,*}.{txt,in}": "pip-requirements",
         "*.html": "html"
       },
-      "emmet.includeLanguages": { "django-html": "html" }
+      "emmet.includeLanguages": { "django-html": "html" },
 }
