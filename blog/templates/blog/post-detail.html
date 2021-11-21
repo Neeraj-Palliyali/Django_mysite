@@ -24,6 +24,18 @@
             <span class="tag"> {{ tag.caption|title }}</span>
         {% endfor %}
         </div>
+
+        <div id = "read-later">
+        <form action="{% url 'read-later' %}"  method="POST"> 
+            {% csrf_token %}
+            <input  type = "hidden" name = "post_id" value="{{post.id}}" >
+            <button> {% if save_for_later %}
+                Remover from read later
+            {% else %}
+                Read Later
+            {% endif %}  </button>
+        </form>
+        </div>
         <article>
             <img src="{{ post.image_name.url }}" alt"{{post.title}}"/>
             <address> By <a href="mailto:{{ post.author.email_id}}">{{post.author}} </a> </address>
@@ -38,6 +50,17 @@
         {{ post.content| linebreaks }}
         
     </main>
+
+    <section id="comments">
+        <ul>
+            {% for comment in comments %}
+            <li>
+                <h2>{{comment.user_name}}</h2>
+                <p>{{comment.text|linebreaks}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
 
     <section id= "comment-form">
         <h2>Your Comment</h2>
