@@ -60,13 +60,13 @@ class SinglePostView(View):
             comment .save()
             return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
 
-        else:  
-            context = { 
-            "post":post,
-            "post_tag": post.caption.all(),
-            "comment_form": CommentForm
-            }
-            return render(request, "blog/post-detail.html", context)
+    
+        context = { 
+        "post":post,
+        "post_tag": post.caption.all(),
+        "comment_form": comment_form
+        }
+        return render(request, "blog/post-detail.html", context)
 
 
 # def post_detail(request, slug):
